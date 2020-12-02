@@ -59,8 +59,16 @@ class Message {
   }
 }
 
-class Email {}
+class Email extends Message{
+  constructor (recipient, sender, subject, text){
+    super(recipient, sender, text)
+    this.subject = subject
+  }
+}
 
+const message2 = new Email('sally@smith.com', 'john@smith.com', 
+  'Test Message Two', 'This is a test message.');
+console.log(message2)
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = {
